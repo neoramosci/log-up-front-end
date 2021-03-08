@@ -60,3 +60,31 @@ const {
 
 // Being sure to do all that's outlined above, write
 // your code below!
+
+if (isRegisteredUser(email) && passwordMatches(email, password)){
+console.log('You have successfully logged in.');
+} 
+
+if (isRegisteredUser(email) && !passwordMatches(email, password)){
+  console.log('Wrong password for that user');
+}
+
+if(
+  !isRegisteredUser(email) &&
+  isValidEmail(email) &&
+  isValidPassword(password)
+){
+  console.log('Welcome to the codeimmersives system!');
+}
+
+if (!isRegisteredUser(email) && !isValidEmail(email)){
+    console.log('This is not a valid email address');
+    console.log('All emails must have a name and a codeimmersives.com address.');
+}
+
+if (!isRegisteredUser(email) && 
+!isValidPassword(password)){
+console.log('That is not a valid password.');
+console.log('All passwords must be at least 8 characters and contain both an uppercased and lowercased letter.');
+}
+
